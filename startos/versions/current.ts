@@ -3,18 +3,18 @@ import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 export const WASABI_VERSION = '2.8.1'
 
 export const current = VersionInfo.of({
-  version: '2.8.1:4',
+  version: '2.8.1:5',
   releaseNotes: {
     en_US:
-      'Separates Web UI and JSON-RPC gateway bindings, centralizes the shared Bitcoin flavor contract, and corrects package source metadata.',
+      'Uses the conventional StartOS package ID “wasabi” instead of the legacy “wasabi-webtop” identity. Existing legacy-ID installations remain separate services.',
     es_ES:
-      'Separa los enlaces de puerta de enlace de la interfaz web y JSON-RPC, centraliza el contrato compartido de variantes de Bitcoin y corrige los metadatos del código fuente del paquete.',
+      'Utiliza el ID de paquete convencional de StartOS «wasabi» en lugar de la identidad heredada «wasabi-webtop». Las instalaciones existentes con el ID heredado siguen siendo servicios separados.',
     de_DE:
-      'Trennt die Gateway-Bindungen für Weboberfläche und JSON-RPC, zentralisiert den gemeinsamen Vertrag der Bitcoin-Varianten und korrigiert die Paketquellmetadaten.',
+      'Verwendet die konventionelle StartOS-Paket-ID „wasabi“ anstelle der bisherigen Identität „wasabi-webtop“. Bestehende Installationen mit der alten ID bleiben separate Dienste.',
     pl_PL:
-      'Rozdziela powiązania bramy interfejsu WWW i JSON-RPC, centralizuje wspólny kontrakt wariantów Bitcoin oraz poprawia metadane źródła pakietu.',
+      'Używa konwencjonalnego identyfikatora pakietu StartOS „wasabi” zamiast starszej tożsamości „wasabi-webtop”. Istniejące instalacje ze starszym identyfikatorem pozostają oddzielnymi usługami.',
     fr_FR:
-      "Sépare les liaisons de passerelle de l'interface Web et de JSON-RPC, centralise le contrat partagé des variantes Bitcoin et corrige les métadonnées de la source du paquet.",
+      "Utilise l'identifiant de paquet StartOS conventionnel « wasabi » au lieu de l'ancienne identité « wasabi-webtop ». Les installations existantes utilisant l'ancien identifiant restent des services distincts.",
   },
   migrations: {
     up: async ({ effects }) => {},

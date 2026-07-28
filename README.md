@@ -64,6 +64,10 @@ new assigned port, the reactive address lookup heals automatically. Wasabi's
 upstream first-run wizard is skipped and its window opens maximized inside
 Webtop.
 
+The StartOS package ID is `wasabi`. Builds previously published with the
+`wasabi-webtop` ID are treated by StartOS as a separate service and do not
+upgrade in place.
+
 ## Configuration Management
 
 | StartOS-managed | Wasabi-managed |
@@ -148,7 +152,7 @@ See [AGENTS.md](AGENTS.md) for the package development workflow.
 ## Quick Reference for AI Consumers
 
 ```yaml
-package_id: wasabi-webtop
+package_id: wasabi
 architectures: [x86_64]
 volumes:
   main: /root/data

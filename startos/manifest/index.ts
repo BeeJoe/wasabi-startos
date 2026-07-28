@@ -3,7 +3,7 @@ import { long, short } from './i18n'
 import { WASABI_VERSION } from '../versions'
 
 export const manifest = setupManifest({
-  id: 'wasabi-webtop',
+  id: 'wasabi',
   title: 'Wasabi Wallet',
   license: 'MIT',
   packageRepo: 'https://github.com/BeeJoe/wasabi-startos',

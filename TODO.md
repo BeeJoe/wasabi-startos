@@ -14,6 +14,8 @@
       rebuild.
 - [x] Run a backup and restore sanity check.
 - [x] Obtain authorization before uninstall/reinstall testing.
+- [x] Verify a clean install and startup under the conventional `wasabi`
+      package ID.
 - [ ] Upgrade the StartOS SDK when a release newer than `2.0.9` fixes its
       bundled `brace-expansion` / `js-yaml` audit findings and the missing
       `@start9labs/start-core` package version metadata.

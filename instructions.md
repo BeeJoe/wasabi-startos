@@ -22,6 +22,10 @@ StartOS server when one is available. This works with StartOS flavors sharing
 the `bitcoind` identity, including Bitcoin Core and Bitcoin Knots. An
 authenticated **JSON-RPC** interface is also available when enabled.
 
+This service uses the StartOS package ID `wasabi`. A legacy installation with
+the `wasabi-webtop` ID is a separate service and does not upgrade into this one
+automatically.
+
 ## Getting set up
 
 1. Complete the required **Settings** task.
