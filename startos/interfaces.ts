@@ -4,8 +4,8 @@ import { sdk } from './sdk'
 import { rpcPort, uiPort } from './utils'
 
 export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
-  const mainHost = sdk.MultiHost.of(effects, 'main')
-  const uiOrigin = await mainHost.bindPort(uiPort, {
+  const uiHost = sdk.MultiHost.of(effects, 'ui')
+  const uiOrigin = await uiHost.bindPort(uiPort, {
     protocol: 'http',
     addSsl: { addXForwardedHeaders: true },
   })
@@ -27,7 +27,8 @@ export const setInterfaces = sdk.setupInterfaces(async ({ effects }) => {
     false
 
   if (rpcEnabled) {
-    const rpcOrigin = await mainHost.bindPort(rpcPort, {
+    const rpcHost = sdk.MultiHost.of(effects, 'rpc')
+    const rpcOrigin = await rpcHost.bindPort(rpcPort, {
       protocol: 'http',
       addSsl: { addXForwardedHeaders: true },
     })

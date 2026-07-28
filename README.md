@@ -78,16 +78,16 @@ into Wasabi's existing JSON files. Unmanaged Wasabi settings are preserved.
 
 ## Network Access and Interfaces
 
-Both interfaces use the stable StartOS host ID `main`:
+Each interface has its own StartOS host and gateway binding:
 
-| Interface | Internal port | Protocol | Availability |
-| --- | ---: | --- | --- |
-| Web UI | `3000` | HTTP behind StartOS TLS termination | Always |
-| JSON-RPC | `37128` | HTTP behind StartOS TLS termination | Only when enabled in **Settings** |
+| Interface | Host ID | Internal port | Protocol | Availability |
+| --- | --- | ---: | --- | --- |
+| Web UI | `ui` | `3000` | HTTP behind StartOS TLS termination | Always |
+| JSON-RPC | `rpc` | `37128` | HTTP behind StartOS TLS termination | Only when enabled in **Settings** |
 
 The Web UI is protected by the Webtop username and password. JSON-RPC uses its
-own Basic Authentication credentials. The user chooses which gateway addresses
-are enabled for each interface.
+own Basic Authentication credentials. Separate bindings let the user choose
+gateway addresses for each interface independently.
 
 ## Actions
 

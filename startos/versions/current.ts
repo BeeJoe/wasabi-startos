@@ -3,18 +3,18 @@ import { IMPOSSIBLE, VersionInfo } from '@start9labs/start-sdk'
 export const WASABI_VERSION = '2.8.1'
 
 export const current = VersionInfo.of({
-  version: '2.8.1:3',
+  version: '2.8.1:4',
   releaseNotes: {
     en_US:
-      'Automatically adopts the live RPC endpoint of any compatible local Bitcoin flavor and repairs stale RPC credentials instead of repeatedly receiving authentication errors.',
+      'Separates Web UI and JSON-RPC gateway bindings, centralizes the shared Bitcoin flavor contract, and corrects package source metadata.',
     es_ES:
-      'Adopta automáticamente el endpoint RPC activo de cualquier variante local compatible de Bitcoin y repara credenciales RPC obsoletas en lugar de recibir errores de autenticación repetidos.',
+      'Separa los enlaces de puerta de enlace de la interfaz web y JSON-RPC, centraliza el contrato compartido de variantes de Bitcoin y corrige los metadatos del código fuente del paquete.',
     de_DE:
-      'Übernimmt automatisch den aktiven RPC-Endpunkt jeder kompatiblen lokalen Bitcoin-Variante und repariert veraltete RPC-Zugangsdaten statt wiederholter Authentifizierungsfehler.',
+      'Trennt die Gateway-Bindungen für Weboberfläche und JSON-RPC, zentralisiert den gemeinsamen Vertrag der Bitcoin-Varianten und korrigiert die Paketquellmetadaten.',
     pl_PL:
-      'Automatycznie używa aktywnego endpointu RPC dowolnego zgodnego lokalnego wariantu Bitcoin i naprawia nieaktualne dane RPC zamiast powtarzających się błędów uwierzytelniania.',
+      'Rozdziela powiązania bramy interfejsu WWW i JSON-RPC, centralizuje wspólny kontrakt wariantów Bitcoin oraz poprawia metadane źródła pakietu.',
     fr_FR:
-      "Adopte automatiquement le point d'accès RPC actif de toute variante Bitcoin locale compatible et répare les identifiants RPC obsolètes au lieu de produire des erreurs d'authentification répétées.",
+      "Sépare les liaisons de passerelle de l'interface Web et de JSON-RPC, centralise le contrat partagé des variantes Bitcoin et corrige les métadonnées de la source du paquet.",
   },
   migrations: {
     up: async ({ effects }) => {},

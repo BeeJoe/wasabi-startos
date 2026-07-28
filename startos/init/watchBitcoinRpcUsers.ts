@@ -1,9 +1,10 @@
-// Bitcoin flavors share the `bitcoind` package identity, actions, and config
-// schema. Bitcoin Core is the canonical build-time package for that contract.
-import { generateRpcUserDependent } from 'bitcoin-core-startos/startos/actions/generateRpcUserDependent'
-import { bitcoinConfFile } from 'bitcoin-core-startos/startos/fileModels/bitcoin.conf'
-import { rpcHostId, rpcPort } from 'bitcoin-core-startos/startos/utils'
 import { bitcoinRpcAuthMatches } from '../bitcoinRpcAuth'
+import {
+  bitcoinConfFile,
+  bitcoinPackageId,
+  bitcoinRpcBinding,
+  generateRpcUserDependent,
+} from '../bitcoinProvider'
 import { store } from '../fileModels/store.yaml'
 import { i18n } from '../i18n'
 import { sdk } from '../sdk'
@@ -21,12 +22,7 @@ export const watchBitcoinRpcUsers = sdk.setupOnInit(async (effects) => {
   }
 
   const bitcoinRpc = await sdk.host
-    .getBridgeAddress(effects, {
-      packageId: 'bitcoind',
-      hostId: rpcHostId,
-      internalPort: rpcPort,
-      ssl: false,
-    })
+    .getBridgeAddress(effects, bitcoinRpcBinding)
     .const()
 
   if (!bitcoinRpc) {
@@ -57,7 +53,7 @@ export const watchBitcoinRpcUsers = sdk.setupOnInit(async (effects) => {
     effects,
     { imageId: 'main' },
     sdk.Mounts.of().mountDependency({
-      dependencyId: 'bitcoind',
+      dependencyId: bitcoinPackageId,
       volumeId: 'main',
       mountpoint: '/mnt/bitcoind',
       subpath: null,
@@ -108,7 +104,7 @@ export const watchBitcoinRpcUsers = sdk.setupOnInit(async (effects) => {
 
       await sdk.action.createTask(
         effects,
-        'bitcoind',
+        bitcoinPackageId,
         generateRpcUserDependent,
         'critical',
         {

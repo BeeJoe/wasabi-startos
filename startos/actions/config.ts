@@ -111,13 +111,13 @@ export const configInput = InputSpec.of({
 
 export const config = sdk.Action.withInput(
   'config',
-  async () => ({
+  async ({ effects }) => ({
     name: 'Settings',
     description: 'Configure Webtop access, Bitcoin, Tor, and JSON-RPC.',
     warning: null,
-    allowedStatuses: 'any',
+    allowedStatuses: 'only-stopped',
     group: 'Configuration',
-    visibility: 'enabled',
+    visibility: (await store.read().const(effects)) ? 'enabled' : 'hidden',
   }),
   configInput,
   async ({ effects }) => readSettings(effects),

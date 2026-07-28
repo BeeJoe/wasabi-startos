@@ -1,6 +1,4 @@
-// Bitcoin flavors share the `bitcoind` package identity and this provider
-// contract. Bitcoin Core is the canonical build-time package for its types.
-import { rpcHostId, rpcPort } from 'bitcoin-core-startos/startos/utils'
+import { bitcoinRpcBinding } from './bitcoinProvider'
 import { configFile, ConfigFileType } from './fileModels/config.json'
 import { store } from './fileModels/store.yaml'
 import { uiConfigFile } from './fileModels/uiConfig.json'
@@ -14,14 +12,7 @@ export const main = sdk.setupMain(async ({ effects }) => {
 
   const bitcoinRpc =
     conf.wasabi.managesettings && conf.wasabi.server.type === 'bitcoind'
-      ? await sdk.host
-          .getBridgeAddress(effects, {
-            packageId: 'bitcoind',
-            hostId: rpcHostId,
-            internalPort: rpcPort,
-            ssl: false,
-          })
-          .const()
+      ? await sdk.host.getBridgeAddress(effects, bitcoinRpcBinding).const()
       : null
 
   const subcontainer = await sdk.SubContainer.eager(

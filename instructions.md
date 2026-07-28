@@ -62,7 +62,8 @@ you want Wasabi to use its upstream network behavior exclusively.
 
 Enable JSON-RPC in **Settings** and save the generated RPC credentials. The
 **JSON-RPC** interface then appears separately from the Web UI. Use the
-interface address together with those RPC credentials.
+interface address together with those RPC credentials. Its gateway addresses
+are managed independently from the Web UI addresses.
 
 The **Use Tor in Wasabi** setting controls Wasabi's bundled Tor process. It does
 not control which StartOS addresses are enabled for the Web UI or JSON-RPC

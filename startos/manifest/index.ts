@@ -6,7 +6,7 @@ export const manifest = setupManifest({
   id: 'wasabi-webtop',
   title: 'Wasabi Wallet',
   license: 'MIT',
-  packageRepo: 'https://github.com/remcoros/wasabi-webtop-startos',
+  packageRepo: 'https://github.com/BeeJoe/wasabi-startos',
   upstreamRepo: 'https://github.com/WalletWasabi/WalletWasabi',
   marketingUrl: 'https://wasabiwallet.io/',
   donationUrl: 'https://docs.wasabiwallet.io/FAQ/FAQ-Contribution.html',
